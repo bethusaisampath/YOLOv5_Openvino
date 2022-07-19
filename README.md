@@ -13,7 +13,8 @@ The YOLO network consists of three main pieces-
 ## YOLOv5
 After a few days of the release of the YOLOv4 model on 27 May 2020, YOLOv5 got released by [Glenn Jocher](https://www.linkedin.com/in/glenn-jocher/)(Founder & CEO of Utralytics). It was publicly released on Github [here](https://github.com/ultralytics/yolov5). Glenn introduced the YOLOv5 Pytorch based approach, and Yes! YOLOv5 is written in the Pytorch framework.
 
-It is state of the art and newest version of the YOLO object detection series, and with the continuous effort and 58 open source contributors, YOLOv5 set the benchmark for object detection models very high; as shown below, it already beats the EfficientDet and its other previous YOLOv5 versions.
+With the continuous effort and 58 open source contributors, YOLOv5 set the benchmark for object detection models very high, it already beats the EfficientDet and its other previous YOLO versions.
+
 # YOLOv5 Inferecning using OpenVINO toolkit
 The following components are required-
 
