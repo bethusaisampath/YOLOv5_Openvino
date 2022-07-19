@@ -62,6 +62,7 @@ python export.py  --weights yolov5-v3/yolov5s.pt  --img 640 --batch 1
 ```
 Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLOv5s.
 
-#### Convert ONNX weights file to OpenVINO IR(Intermediate Representation) file
+#### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
+1) After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
 
 ### Linux
