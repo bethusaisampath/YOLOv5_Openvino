@@ -5,9 +5,7 @@ YOLO refers to “You Only Look Once” is one of the most versatile and famous 
 
 The YOLO network consists of three main pieces-
 1) Backbone - A convolutional neural network that aggregates and forms image features at different granularities.
-
 2) Neck - A series of layers to mix and combine image features to pass them forward to prediction.
-
 3) Head - Consumes features from the neck and takes box and class prediction steps.
 
 ## YOLOv5
@@ -27,3 +25,5 @@ The following components are required-
 - ONNX
 - Pytorch
 - Netron model visualizer
+
+## OpenVINO toolkit Installation
