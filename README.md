@@ -28,7 +28,9 @@ The following components are required-
 
 ## OpenVINO toolkit Installation
 ### For OpenVINO version < 2022.1
-1) [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or 2021.2 or 2021.1 or any older version (where Model optimizer component is included in the toolkit)
+1) [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or any other older version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions.
+2) Here Model optimizer comes included in the toolkit.
 
 ### For OpenVINO version >= 2022.1
-- 
+1) [Install]([https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download.html) OpenVINO toolkit 2022.1 or any other recent version of your choice. Download and install suitable toolkit depending on your operating system. Follow all the required install instructions. Here the OpenVINO development tools are not included in the toolkit, they need to be installed seperately.
+2) From the 2022.1 release, the OpenVINO™ Development Tools (like Model Optimizer, Benchmark Tool, Accuracy Checker & Post-Training Optimization Tool, etc) can only be installed via PyPI. 
