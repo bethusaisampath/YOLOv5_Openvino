@@ -56,9 +56,12 @@ pip install -r requirements.txt
 wget https://github.com/ultralytics/yolov5/releases/download/v3.0/yolov5s.pt 
 ```
 3)Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command:
+
 ```
 python export.py  --weights yolov5-v3/yolov5s.pt  --img 640 --batch 1
 ```
 Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLOv5s.
+
+#### Convert ONNX weights file to OpenVINO IR(Intermediate Representation) file
 
 ### Linux
