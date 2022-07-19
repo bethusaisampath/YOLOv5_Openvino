@@ -45,6 +45,6 @@ git clone https://github.com/ultralytics/yolov5
 cd yolov5
 pip install -r requirements.txt
 ```
-2) Download latest [Wget](https://eternallybored.org/misc/wget) exe file and then copy wget.exe to your C:\Windows\System32 folder location.
+2) Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location.
 
 ### Linux
