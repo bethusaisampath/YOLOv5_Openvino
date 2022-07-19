@@ -17,6 +17,7 @@ The largest contribution of YOLOv5 is to translate the Darknet research framewor
 
 # YOLOv5 Inferencing using OpenVINO toolkit
 Now we will see how YOLOv5 model inferencing can be done using Intel OpenVINO toolkit.
+
 The following components are required-
 
 - OpenVINO toolkit
