@@ -91,9 +91,12 @@ wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_1.jpg" width="70%">
+
 ```
 python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_2.jpg" width="70%">
 
 ```
 python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
