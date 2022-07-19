@@ -27,3 +27,8 @@ The following components are required-
 - Netron model visualizer
 
 ## OpenVINO toolkit Installation
+### For OpenVINO version < 2022.1
+1) [Install](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/download-previous-versions.html) OpenVINO toolkit 2021.4 or 2021.3 or 2021.2 or 2021.1 or any older version (where Model optimizer component is included in the toolkit)
+
+### For OpenVINO version >= 2022.1
+- 
