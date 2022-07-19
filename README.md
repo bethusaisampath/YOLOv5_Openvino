@@ -47,4 +47,7 @@ pip install -r requirements.txt
 ```
 2) Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location.
 
+#### Downloading Pytorch weights and Converting them to ONNX weights
+1) There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
+<img src="https://github.com/violet17/yolov5_demo/blob/main/yolov5_output_node_for_stride_8.png" width="70%">
 ### Linux
