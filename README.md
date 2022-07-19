@@ -20,7 +20,7 @@ The following components are required-
 
 - OpenVINO toolkit
 - Model Optimizer - For Openvino toolkit (version < 2022.1) , Model optimizer comes included in the toolkit. But for 2022.1 versions onwards, OpenVINO development tools (like model optimizer) need to be installed seperately.
-- System – CPU/ GPU/ VPU
+- System – Intel CPU/ GPU/ VPU
 - Python
 - ONNX
 - Pytorch
@@ -51,7 +51,14 @@ pip install -r requirements.txt
 1) There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
 <img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5%20pretrained%20models.png" width="70%">
 2) Run the following command to download the YOLOV5s Pytorch Weights(yolov5s.pt):
+
 ```
 wget https://github.com/ultralytics/yolov5/releases/download/v3.0/yolov5s.pt 
 ```
+3) Convert Pytorch Weights to ONNX Weights - The YOLOv5 repository provides a script export.py to export Pytorch weights with extensions *.pt to ONNX weights with extensions *.onnx. Run the following command:
+```
+python export.py  --weights yolov5-v3/yolov5s.pt  --img 640 --batch 1
+```
+Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLOv5s.
+
 ### Linux
