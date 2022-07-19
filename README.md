@@ -37,5 +37,15 @@ The following components are required-
 
 ## YOLOv5 inferencing using OpenVINO toolkit
 ### Windows
+#### Clone the YOLOv5 repository from Github
+1) Clone the latest YOLOv5 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv5 release.
+Running the following commands in the command prompt terminal of Windows-
+```
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
+pip install onnx
+
+```
 
 ### Linux
