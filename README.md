@@ -49,5 +49,5 @@ pip install -r requirements.txt
 
 #### Downloading Pytorch weights and Converting them to ONNX weights
 1) There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
-<img src="https://github.com/violet17/yolov5_demo/blob/main/yolov5_output_node_for_stride_8.png" width="70%">
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5%20pretrained%20models.png" width="70%">
 ### Linux
