@@ -21,7 +21,7 @@ Now we will see how YOLOv5 model inferencing can be done using Intel OpenVINO to
 The following components are required-
 
 - OpenVINO toolkit
-- Model Optimizer - For Openvino toolkit (version < 2022.1) , Model optimizer comes included in the toolkit. But for 2022.1 versions onwards, OPenVINO development tools (like model optimizer) need to be installed seperately.
+- Model Optimizer - For Openvino toolkit (version < 2022.1) , Model optimizer comes included in the toolkit. But for 2022.1 versions onwards, OpenVINO development tools (like model optimizer) need to be installed seperately.
 - System – CPU/ GPU/ VPU
 - Python
 - ONNX
