@@ -80,12 +80,19 @@ After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v3.
 #### YOLOv5 Inference Demo
 
 1. After we generate the IR of YOLOv5 model, use the Python demo(YOLOv5_demo.py script) for inferencing process of YOLOv5 model.
-2. Download some images/videos and object classes for inferencing.
+2. Download some images/videos and object classes for inferencing-
 ```
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
 wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
-wget https://raw.githubusercontent.com/bharath5673/OpenVINO/main/yolo_80classes.txt
-
+wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
 ```
+3. Run the following command for Inferencing-
+```
+python yolov5_demo.py -i img2.jpeg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
+```
+```
+python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
+```
+
 ### Linux
