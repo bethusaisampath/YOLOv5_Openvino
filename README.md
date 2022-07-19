@@ -77,5 +77,6 @@ After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v3.
 
 #### YOLOv5 Inference Demo
 1) After we generate the IR of YOLOv5 model, use the Python demo(YOLOv5_demo.py script) for inferencing process of YOLOv5 model.
+2) Download some images/videos and object classes for inferencing.
 
 ### Linux
