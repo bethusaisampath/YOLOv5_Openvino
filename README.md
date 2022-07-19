@@ -64,5 +64,5 @@ Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLO
 
 #### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
 1) After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
-
+2) Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron web app to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
 ### Linux
