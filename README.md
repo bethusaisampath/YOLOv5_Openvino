@@ -64,5 +64,18 @@ Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLO
 
 #### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
 1) After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
-2) Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron web app to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
+2) Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5_Output_node.jpg" width="70%">
+3) Run the following command to generate the IR of YOLOv5 model:
+
+```
+Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov5-v3/yolov5s.onnx --model_name yolov5-v3/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+```
+
+Where --input_model defines the pre-trained model, the parameter --model_name is name of the network in generated IR and output .xml/.bin files, -s represents that all input values coming from original network inputs will be divided by this value, --reverse_input_channels is used to switch the input channels order from RGB to BGR (or vice versa), --output represents the name of the output operation of the model. 
+After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v3.
+
+#### YOLOv5 Inference Demo
+1) After we generate the IR of YOLOv5 model, use the Python demo(YOLOv5_demo.py script) for inferencing process of YOLOv5 model.
+
 ### Linux
