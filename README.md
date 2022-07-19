@@ -68,8 +68,13 @@ Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLO
 2. Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
 <img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5_Output_node.jpg" width="70%">
 
-3. Run the following command to generate the IR of YOLOv5 model:
+3. Run the following command to generate the IR of YOLOv5 model(if OpenVINO version >= 2022.1):
 
+```
+Python C:/Users/Bethu Sai Sampath/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v3/yolov5l.onnx --model_name yolov5-v3/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+```
+
+If OpenVINO version < 2022.1, run the following command:
 ```
 Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov5-v3/yolov5s.onnx --model_name yolov5-v3/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
 ```
@@ -77,6 +82,8 @@ Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/m
 Where --input_model defines the pre-trained model, the parameter --model_name is name of the network in generated IR and output .xml/.bin files, -s represents that all input values coming from original network inputs will be divided by this value, --reverse_input_channels is used to switch the input channels order from RGB to BGR (or vice versa), --output represents the name of the output operation of the model. 
 After this command execution, we get IR of YOLOv5s in FP32 in folder yolov5-v3.
 
+4. The result of the optimization process is an IR model. The model is split into two files - model.xml(XML file containing the network architecture) & 
+model.bin (binary file contains the weights and biases)
 #### YOLOv5 Inference Demo
 
 1. After we generate the IR of YOLOv5 model, use the Python demo(YOLOv5_demo.py script) for inferencing process of YOLOv5 model.
@@ -91,15 +98,19 @@ wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_1.jpg" width="70%">
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_1.JPG" width="70%">
 
 ```
 python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_2.jpg" width="70%">
+<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_2.JPG" width="70%">
+
 
 ```
 python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
+https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
+
+
 
 ### Linux
