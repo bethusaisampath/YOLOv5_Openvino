@@ -50,7 +50,7 @@ pip install -r requirements.txt
 
 #### Downloading Pytorch weights and Converting them to ONNX weights
 1. There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5%20pretrained%20models.png" width="70%">
+![YOLOv5 pretrained models](https://user-images.githubusercontent.com/37048080/179829729-3eb55365-fbee-40e1-b4e7-48c22206d2b7.png)
 
 2. Run the following command to download the YOLOV5s Pytorch Weights(yolov5s.pt):
 ```
@@ -66,7 +66,7 @@ Then we can get yolov5s.onnx in yolov5-v3 folder containing ONNX version of YOLO
 #### Convert ONNX weights file to OpenVINO IR(Intermediate Representation)
 1. After we get ONNX weights file from the last section, we can convert it to IR file with model optimizer. We need to specify the output node of the IR when we use model optimizer to convert the YOLOv5 model. There are 3 output nodes in YOLOv5.
 2. Download & Install [Netron](https://github.com/lutzroeder/netron)  or use Netron [web app](https://netron.app/) to visualize the YOLOv5 ONNX weights. Then we find the output nodes by searching the keyword “Transpose” in Netron. After that, we can find the convolution node marked as oval shown in following Figure. After double clicking the convolution node, we can read its name “Conv_198” for stride 8 on the properties panel marked as rectangle shown in following Figure. We apply this name “Conv_198” of convolution node to specify the model optimizer parameters. Similarly, we can find the other two output nodes “Conv_217” for stride 16 and “Conv_236” for stride 32. 
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/YOLOv5_Output_node.jpg" width="70%">
+![YOLOv5_Output_node](https://user-images.githubusercontent.com/37048080/179829580-f2edd2bc-189c-4d70-9e5f-08819a92e1f8.jpg)
 
 3. Run the following command to generate the IR of YOLOv5 model(if OpenVINO version >= 2022.1):
 
@@ -98,19 +98,18 @@ wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_1.JPG" width="70%">
+![Demo_1](https://user-images.githubusercontent.com/37048080/179829424-48e64714-d755-4fef-970a-6134564b4cf5.JPG)
 
 ```
 python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
-<img src="https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/Demo_2.JPG" width="70%">
-
+![Demo_2](https://user-images.githubusercontent.com/37048080/179829463-34c89ab4-5f32-44cf-8400-8c5878ff46a5.JPG)
 
 ```
 python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
 https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
-![Demo_1](https://user-images.githubusercontent.com/37048080/179828500-89481327-869b-4811-b775-d977916c4415.JPG)
+
 
 
 
