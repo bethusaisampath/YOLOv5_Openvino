@@ -13,6 +13,9 @@ After a few days of the release of the YOLOv4 model on 27 May 2020, YOLOv5 got r
 
 The largest contribution of YOLOv5 is to translate the Darknet research framework to the PyTorch framework. The Darknet framework is written primarily in C and offers fine grained control over the operations encoded into the network. In many ways the control of the lower level language is a boon to research, but it can make it slower to port in new research insights, as one writes custom gradient calculations with each new addition. Pytotch inferences are very fast that before releasing YOLOv5, many other AI practitioners often translate the YOLOv3 and YOLOv4 weights into Ultralytics Pytorch weight. There is no official YOLOV5 paper released yet and also many controversies are happening about its name.
 
+## OpenVINO
+The Intel distribution of the OpenVINO toolkit is a free to download set of Python and C++ scripts that are used to optimize, tune, and improve the inference of AI models. The toolkit also includes the Intel Open Model Zoo, which contains numerous pre-trained and pre-optimized models ready to be used.
+
 # YOLOv5 Inferencing using OpenVINO toolkit
 Now we will see how YOLOv5 model inferencing can be done using Intel OpenVINO toolkit.
 
