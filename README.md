@@ -89,8 +89,12 @@ wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes
 ```
 3. Run the following command for Inferencing-
 ```
-python yolov5_demo.py -i img2.jpeg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
+python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
+```
+python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
+```
+
 ```
 python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
