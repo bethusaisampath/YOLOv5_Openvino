@@ -36,7 +36,7 @@ The following components are required-
 2. From the 2022.1 release, the [OpenVINO Development Tools](https://docs.openvino.ai/2022.1/openvino_docs_install_guides_install_dev_tools.html#doxid-openvino-docs-install-guides-install-dev-tools) (like Model Optimizer, Benchmark Tool, Accuracy Checker & Post-Training Optimization Tool, etc) can only be installed via [PyPI](https://pypi.org/project/openvino-dev/). Download and install the Development Tools Package from PyPI where we use Model optimizer for our YOLOv5 optimization.
 
 ## YOLOv5 inferencing using OpenVINO toolkit
-### Windows
+### Windows/Linux
 #### Clone the YOLOv5 repository from Github
 1. Clone the latest YOLOv5 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv5 release.
 Running the following commands in the command prompt terminal of Windows-
@@ -46,7 +46,7 @@ cd yolov5
 pip install -r requirements.txt
 ```
 
-2. Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location.
+2. For Windows OS - Download latest Wget exe file from [here](https://eternallybored.org/misc/wget) and then copy wget.exe to your C:\Windows\System32 folder location.
 
 #### Downloading Pytorch weights and Converting them to ONNX weights
 1. There are various pretrained models to start training from. Here we select YOLOv5s, the smallest and fastest model available.
@@ -110,5 +110,3 @@ python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml 
 ```
 https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
 
-
-### Linux
