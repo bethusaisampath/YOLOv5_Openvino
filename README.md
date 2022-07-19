@@ -39,7 +39,7 @@ The following components are required-
 ### Windows/Linux :
 #### Clone the YOLOv5 repository from Github
 1. Clone the latest YOLOv5 [repository](https://github.com/ultralytics/yolov5) and install requirements.txt in Python>=3.7.0 environment, including PyTorch>=1.7. Models and datasets download automatically from the latest YOLOv5 release.
-Running the following commands in the command prompt terminal of Windows-
+Running the following commands(one after the other) in the terminal of Windows/Linux-
 ```
 git clone https://github.com/ultralytics/yolov5
 cd yolov5
@@ -87,14 +87,15 @@ model.bin (binary file contains the weights and biases)
 #### YOLOv5 Inference Demo
 
 1. After we generate the IR of YOLOv5 model, use the Python demo(yolov5_demo.py script) for inferencing process of YOLOv5 model.
-2. Download some images/videos and object classes for inferencing-
+2. Download some images/videos and object classes for inferencing. Run the following commands one after the other-
 ```
 wget -O face-demographics-walking.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/face-demographics-walking.mp4
 wget -O bottle-detection.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/bottle-detection.mp4
 wget -O head-pose-face-detection-female.mp4 https://github.com/intel-iot-devkit/sample-videos/raw/master/head-pose-face-detection-female.mp4
 wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolo_80classes.txt
+wget https://github.com/bethusaisampath/YOLOv5_Openvino/blob/main/yolov5_demo.py
 ```
-3. Run the following command for Inferencing-
+3. Run the following commands for Inferencing-
 ```
 python yolov5_demo.py -i data/images/bus.jpg -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
