@@ -109,5 +109,8 @@ python yolov5_demo.py -i data/images/zidane.jpg -m yolov5-v3/yolov5s.xml --label
 ```
 python yolov5_demo.py -i face-demographics-walking.mp4 -m yolov5-v3/yolov5s.xml --labels yolo_80classes.txt
 ```
+On the start-up, the application reads command-line parameters and loads a network to the Inference Engine. Upon getting a frame from the OpenCV VideoCapture, it performs inference and displays the results.
+
 https://user-images.githubusercontent.com/37048080/179828046-78eed3dc-00ed-456f-aa80-debe9a9965de.mp4
+
 
