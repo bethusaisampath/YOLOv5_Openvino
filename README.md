@@ -70,12 +70,12 @@ Then we can get yolov5s.onnx in yolov5-v6.1 folder containing ONNX version of YO
 3. Run the following command to generate the IR of YOLOv5 model(if OpenVINO version >= 2022.1):
 
 ```
-Python C:/Users/Bethu Sai Sampath/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v6.1/yolov5l.onnx --model_name yolov5-v3/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+Python C:/Users/Bethu Sai Sampath/openvino_env/Lib/site-packages/openvino/tools/mo/mo.py --input_model yolov5-v6.1/yolov5l.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
 ```
 
 If OpenVINO version < 2022.1, run the following command:
 ```
-Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov5-v6.1/yolov5s.onnx --model_name yolov5-v3/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
+Python “C:/Program Files (x86)”/Intel/openvino_2021.4.752/deployment_tools/model_optimizer/mo.py --input_model yolov5-v6.1/yolov5s.onnx --model_name yolov5-v6.1/yolov5s -s 255 --reverse_input_channels --output Conv_198,Conv_217,Conv_236
 ```
 
 Where --input_model defines the pre-trained model, the parameter --model_name is name of the network in generated IR and output .xml/.bin files, -s represents that all input values coming from original network inputs will be divided by this value, --reverse_input_channels is used to switch the input channels order from RGB to BGR (or vice versa), --output represents the name of the output operation of the model. 
